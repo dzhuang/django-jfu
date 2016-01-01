@@ -1,10 +1,11 @@
 #!/bin/bash
 virtualenv venv
 source venv/bin/activate
-pip install django
+pip install -r requirments.txt
 pip install -e ../
 
 mkdir media static
+python manage.py bower install --noinput
 python manage.py syncdb --noinput
 python manage.py collectstatic --noinput
 echo "Setup Complete."

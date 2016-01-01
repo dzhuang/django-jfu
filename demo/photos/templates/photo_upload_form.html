@@ -2,5 +2,14 @@
 
 {% block JS_OPTS %}
 sequentialUploads: true,
-acceptFileTypes: /(\.|\/)(png|gif|jpe?g)$/i
+disableImageResize: /Android(?!.*Chrome)|Opera/
+    .test(window.navigator && navigator.userAgent),
+imageMaxWidth: 960,
+imageMaxHeight: 960,
+imageCrop: false, // Force cropped images
+acceptFileTypes: /(\.|\/)(png|gif|jpe?g)$/i,
+messages: {
+                acceptFileTypes: 'File type not allowed'
+            },
+imageOrientation: true,
 {% endblock %}

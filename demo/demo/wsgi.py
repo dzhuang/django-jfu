@@ -19,17 +19,22 @@ import site
 
 os.environ['DJANGO_SETTINGS_MODULE'] = 'demo.settings'
 
-SITE_ROOT = os.path.dirname(os.path.dirname( __file__ ))
 
-site.addsitedir( SITE_ROOT + '/venv/local/lib/python2.7/site-packages' )
+# {{{ unncomment the following block to enable virtualenv
 
-sys.path.append( SITE_ROOT )
+#SITE_ROOT = os.path.dirname(os.path.dirname( __file__ ))
 
-exc_dir = 'scripts' if os.name == 'nt' else 'bin'
-venv = '%s/venv/%s/activate_this.py' % (SITE_ROOT, exc_dir )
+#site.addsitedir( SITE_ROOT + '/venv/local/lib/python2.7/site-packages' )
 
-activate_env = os.path.expanduser( venv )
-execfile( activate_env, dict(__file__ = activate_env ))
+#sys.path.append( SITE_ROOT )
+
+#exc_dir = 'scripts' if os.name == 'nt' else 'bin'
+#venv = '%s/venv/%s/activate_this.py' % (SITE_ROOT, exc_dir )
+
+#activate_env = os.path.expanduser( venv )
+#execfile( activate_env, dict(__file__ = activate_env ))
+
+# }}}
 
 import django.core.handlers.wsgi
 application = django.core.handlers.wsgi.WSGIHandler()

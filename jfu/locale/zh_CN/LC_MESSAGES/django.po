@@ -8,40 +8,39 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-16 12:13+0800\n"
+"POT-Creation-Date: 2015-12-16 12:11+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: .\templates\jfu\upload_form.html:106
 msgid "Add files..."
-msgstr "Ajouter fichiers"
+msgstr "添加文件..."
 
 #: .\templates\jfu\upload_form.html:147
 msgid "Start upload"
-msgstr "Envoyer"
+msgstr "开始上传"
 
 #: .\templates\jfu\upload_form.html:151
 msgid "Cancel upload"
-msgstr "Annuler"
+msgstr "取消上传"
 
 #: .\templates\jfu\upload_form.html:155 .\templates\jfu\upload_form.html:364
 msgid "Delete"
-msgstr "Supprimer"
+msgstr "删除"
 
 #: .\templates\jfu\upload_form.html:277
 msgid "Start"
-msgstr "Envoyer"
+msgstr "开始"
 
 #: .\templates\jfu\upload_form.html:286 .\templates\jfu\upload_form.html:370
 msgid "Cancel"
-msgstr "Annuler"
+msgstr "取消"
 
 #: .\templates\jfu\upload_form.html:340
 msgid "Error"
-msgstr "Erreur"
+msgstr "错误"

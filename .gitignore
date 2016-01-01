@@ -6,3 +6,4 @@ demo/media
 dist/
 django_jfu.egg-info/
 build/
+/demo/components

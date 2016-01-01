@@ -1,5 +1,5 @@
 ----------------------------------------------------
-Django-JFU - A Django Library for jQuery File Upload 
+Django-JFU - A Django Library for jQuery File Upload (Modified)
 ----------------------------------------------------
 
 Django-JFU is designed to simplify the tasks involved in integrating jQuery
@@ -14,6 +14,15 @@ If you seek a tool to ease the integration of jQuery File Upload into your
 Django application while still having a great degree of freedom, you may find
 this package useful.
 
+This version of django-jfu is forked from https://github.com/azman0101/django-jfu,
+and it is integrating jQuery File Upload (https://github.com/blueimp/jquery-file-upload)
+using bower.
+
+The models in the demo, and the handler of forms are modified in accordance
+with django-jquery-file-upload (https://github.com/sigurdga/django-jquery-file-upload.git),
+so that the uploaded images will be loaded when the page is reloaded. That functionality is 
+not done in the original repo by Alem.
+
 Demo_
 
 .. _Demo: http://djfu-demo.cidola.com
@@ -21,10 +30,13 @@ Demo_
 Installation
 ------------
 
-1. ``pip install django-jfu``.
-2. Add 'jfu' to ``INSTALLED_APPS`` in your project settings.py file.
-3. Add 'django.core.context_processors.request' and 'django.core.context_processors.static' to ``TEMPLATE_CONTEXT_PROCESSORS`` in settings.py.
-4. Run `python manage.py collectstatic`.
+1. Install bower
+2. ``pip install git+https://github.com/dzhuang/django-jfu.git``.
+3. Add 'jfu' and 'django-bower' to ``INSTALLED_APPS`` in your project settings.py file.
+4. Add django-bower configurations into your settings.py, for the required static js and css for the app to run, including bootstrap, jqueryui, jquery-file-upload, blueimp-gallery and html5shiv. Refer to the ``django-bower configurations`` block in the settings.py of the demo app.
+5. Add 'django.core.context_processors.request' and 'django.core.context_processors.static' to ``TEMPLATE_CONTEXT_PROCESSORS`` in settings.py.
+6. Run `python manage.py bower install`.
+7. Run `python manage.py collectstatic`.
 
 
 Usage
@@ -40,8 +52,9 @@ following within it::
     {% load jfutags %}
     {% jfu %}
 
-Then create a view that will handle the uploaded files. By default, the
-URL for the view must be named **'jfu_upload'**.
+Then create a view that will handle the uploaded files. 
+The URL for the view is expected to be named **'jfu_upload'** by default,
+although this can be customized (see Customization below).
 
 Here is an example implementation:
 
@@ -113,7 +126,7 @@ template to load and the name of the URL pointing to the upload-handling
 view.::
 
     {% load jfutags %}
-    {% jfu 'your_fileuploader.html' 'your_uploader' %}
+    {% jfu 'your_fileuploader.html' 'your_uploader_URL_name' %}
 
 A custom template can extend from the master Django-JFU template
 `jfu/upload_form.html`.  There are several blocks which may be overriden for
@@ -232,12 +245,16 @@ or by replacing the static files themselves.
 Demo
 ----
 If you have downloaded from the repository, a simple demo application has been
-included in the 'demo' directory. To test it out, run ::
+included in the 'demo' directory. 
+To test it out, enter the 'demo' directory and run ::
 
         ./setup && ./run
+
+Note that virtualenv is disabled for the demo to function by default, your can
+also enable virtualenv by uncommentting some lines in the ``wsgi.py`` module.
 
 Contribution
 ------------           
 Django-JFU is wholly open source and welcomes contributions of any kind. Feel
 free to either extend it, report bugs, or provide suggestions for improvements.
-The author of Django-JFU can be contacted at alem@cidola.com.
+The author of this modified version of Django-JFU can be contacted at dzhuang.scut@gmail.com.

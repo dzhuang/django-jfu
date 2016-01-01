@@ -1,4 +1,4 @@
-from os.path import dirname
+from os.path import dirname, join
 PROJECT_ROOT = dirname( dirname( __file__  ) )
 
 DEBUG = True
@@ -112,6 +112,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'djangobower',
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
@@ -119,6 +120,24 @@ INSTALLED_APPS = (
     'photos',
     'jfu'
 )
+
+# {{{ django-bower configurations
+
+BOWER_COMPONENTS_ROOT = join(PROJECT_ROOT, "components")
+
+STATICFILES_FINDERS = tuple(STATICFILES_FINDERS) + (
+    "djangobower.finders.BowerFinder",
+    )
+
+BOWER_INSTALLED_APPS = (
+    "bootstrap#3.3.4",
+    "jqueryui",
+    "jquery-file-upload",
+    "blueimp-gallery",
+    "html5shiv",
+    )
+
+# }}}
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
@@ -161,5 +180,5 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 )
 
 ALLOWED_HOSTS = [
-    'djfu-demo.cidola.com',
+    '*',
 ]
