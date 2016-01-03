@@ -126,7 +126,7 @@ template to load and the name of the URL pointing to the upload-handling
 view.::
 
     {% load jfutags %}
-    {% jfu 'your_fileuploader.html' 'your_uploader_URL_name' %}
+    {% jfu 'your_fileuploader.html' 'your_uploader_URL_name' 'your_uploaded_view_URL_name' %}
 
 A custom template can extend from the master Django-JFU template
 `jfu/upload_form.html`.  There are several blocks which may be overriden for

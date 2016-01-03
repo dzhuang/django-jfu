@@ -1,5 +1,4 @@
 from django.db import models
-from demo.settings import MEDIA_ROOT
 
 # Create your models here.
 

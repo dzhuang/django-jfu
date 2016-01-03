@@ -28,14 +28,10 @@ def serialize(instance, file_attr='file'):
     
     from django.conf.urls.static import static
 
-    print static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     obj = getattr(instance, file_attr)
 
-    print settings.MEDIA_ROOT
-    print obj.url
     return {
         'url': obj.url,
-        #'url': "abc",
         'name': order_name(obj.name),
         'type': mimetypes.guess_type(obj.path)[0] or 'image/png',
         'thumbnailUrl': obj.url,
