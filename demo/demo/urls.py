@@ -10,9 +10,9 @@ urlpatterns = patterns('',
 
 urlpatterns += [
     url(r'^image/upload/', ImageCreateView.as_view(), name = 'jfu_upload'),
-    url(r'^image/delete/(?P<pk>\d+)$', ImageDeleteView.as_view(), name='upload-delete'),
-    url(r'^image/view/$', ImageListView.as_view(), name='upload-view'),
+    url(r'^image/delete/(?P<pk>\d+)$', ImageDeleteView.as_view(), name='jfu_delete'),
+    url(r'^image/view/$', ImageListView.as_view(), name='jfu_view'),
 ]
 
 
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

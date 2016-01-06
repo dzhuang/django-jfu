@@ -56,6 +56,9 @@ Then create a view that will handle the uploaded files.
 The URL for the view is expected to be named **'jfu_upload'** by default,
 although this can be customized (see Customization below).
 
+The URL for the view is expected to be named **'jfu_view'** by default, and it 
+can also be customized.
+
 Here is an example implementation:
 
 In your ``urls.py`` file::

@@ -17,7 +17,7 @@ def order_name(name):
     return name[:10] + "..." + name[-7:]
 
 
-def serialize(instance, file_attr='file'):
+def serialize(instance, file_attr='file', uploaded_view_name='jfu_delete'):
     """serialize -- Serialize a Picture instance into a dict.
 
     instance -- Picture instance
@@ -36,7 +36,7 @@ def serialize(instance, file_attr='file'):
         'type': mimetypes.guess_type(obj.path)[0] or 'image/png',
         'thumbnailUrl': obj.url,
         'size': obj.size,
-        'deleteUrl': reverse('upload-delete', args=[instance.pk]),
+        'deleteUrl': reverse(uploaded_view_name, args=[instance.pk]),
         'deleteType': 'DELETE',
     }
 

@@ -9,7 +9,7 @@ def jfu(
         context,
         template_name = 'jfu/upload_form.html',
         upload_handler_name = 'jfu_upload',
-        uploaded_view_url = None,
+        uploaded_view_url = 'jfu_view',
         *args, **kwargs
     ):
     """
@@ -30,7 +30,9 @@ def jfu(
         ),
         # The uploaded results are not displayed by default. To display the
         # uploaded results, pass the name of the view url to context.
-        'uploaded_view_url' : uploaded_view_url,
+        'uploaded_view_url' : reverse(
+            uploaded_view_name, args = args, kwargs = kwargs
+        ),
     } )
 
     # Use the request context variable, injected

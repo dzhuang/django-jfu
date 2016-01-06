@@ -527,7 +527,7 @@
                             //xhrFields: {withCredentials: true},
                             //url: $('#fileupload').fileupload('option', 'url'),
 
-                            url: "{% url uploaded_view_url %}", 
+                            url: "{{ uploaded_view_url }}",
 
                             dataType: 'json',
                             context: $('#fileupload')[0]
