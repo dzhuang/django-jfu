@@ -9,7 +9,7 @@ def jfu(
         context,
         template_name = 'jfu/upload_form.html',
         upload_handler_name = 'jfu_upload',
-        uploaded_view_url = 'jfu_view',
+        uploaded_view_name = 'jfu_view',
         *args, **kwargs
     ):
     """
