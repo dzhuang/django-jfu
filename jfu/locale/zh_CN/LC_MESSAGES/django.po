@@ -19,15 +19,15 @@ msgstr ""
 
 #: .\templates\jfu\upload_form.html:106
 msgid "Add files..."
-msgstr "添加文件..."
+msgstr "添加<span class='omit'>文件</span>..."
 
 #: .\templates\jfu\upload_form.html:147
 msgid "Start upload"
-msgstr "开始上传"
+msgstr "<span class='omit'>开始</span>上传"
 
 #: .\templates\jfu\upload_form.html:151
 msgid "Cancel upload"
-msgstr "取消上传"
+msgstr "取消<span class='omit'>上传</span>"
 
 #: .\templates\jfu\upload_form.html:155 .\templates\jfu\upload_form.html:364
 msgid "Delete"

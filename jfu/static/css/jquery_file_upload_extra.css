@@ -2,3 +2,10 @@
 .preview img {
     max-height:100px;
 }
+
+@media (max-width: 767px) {
+  .fileupload-buttonbar .delete
+  {
+    display: none;
+  }
+}
