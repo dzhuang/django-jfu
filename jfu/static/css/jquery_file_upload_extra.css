@@ -4,7 +4,8 @@
 }
 
 @media (max-width: 767px) {
-  .fileupload-buttonbar .delete
+  .fileupload-buttonbar .delete,
+  span .omit
   {
     display: none;
   }
