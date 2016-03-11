@@ -22,7 +22,8 @@
         <link rel="stylesheet" href="{{ STATIC_URL }}blueimp-file-upload/css/jquery.fileupload-ui.css">
 
         {# CSS adjustments for browsers with JavaScript disabled #}
-        <noscript> <link rel="stylesheet" href="{{ STATIC_URL }}blueimp-file-upload/css/jquery.fileupload-ui-noscript.css"> </noscript>
+        <noscript><link rel="stylesheet" href="{{ STATIC_URL }}blueimp-file-upload/css/jquery.fileupload-noscript.css"></noscript>
+        <noscript><link rel="stylesheet" href="{{ STATIC_URL }}blueimp-file-upload/css/jquery.fileupload-ui-noscript.css"> </noscript>
     {% endblock %}
 
     {% block CSS_HTML5_SHIM %}
